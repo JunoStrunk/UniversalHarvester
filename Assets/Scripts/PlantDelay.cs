@@ -16,6 +16,11 @@ public class PlantDelay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        StartCoroutine(Delay());
+    }
+
+    IEnumerator Delay()
+    {
+
     }
 }

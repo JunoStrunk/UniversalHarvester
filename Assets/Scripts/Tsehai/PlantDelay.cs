@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class PlantDelay : MonoBehaviour
 {
+    //PUT THIS ON A MANAGER
     public GameObject stage1;
     public GameObject stage2;
     public GameObject stage3;
     public string plantname;
-    
+    public bool done=false;
+    public static PlantDelay instance;
+
+
     public float timer=0;
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+    private void Awake()
+    {
+        instance = this;
     }
 
     // Update is called once per frame
@@ -49,6 +57,7 @@ public class PlantDelay : MonoBehaviour
             stage1.SetActive(false);
             stage2.SetActive(false);
             stage3.SetActive(true);
+            done = true;
         }
         
 

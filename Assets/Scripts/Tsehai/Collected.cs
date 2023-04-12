@@ -6,6 +6,7 @@ using TMPro;
 
 public class Collected : MonoBehaviour
 {
+    // PUT THIS ON THE PLANT PARENT
     public string Pname;
     bool inRange=false;
     public TextMeshProUGUI collect;
@@ -19,12 +20,16 @@ public class Collected : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange == true)
+        if (PlantDelay.instance.done == true)
         {
-            E.SetActive(true);
-        } else
-        {
-            E.SetActive(false);
+            if (inRange == true)
+            {
+                E.SetActive(true);
+            }
+            else if (inRange == false)
+            {
+                E.SetActive(false);
+            }
         }
     }
 
@@ -34,7 +39,11 @@ public class Collected : MonoBehaviour
         {
             inRange = true;
         }
-        else
+      
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
         {
             inRange = false;
         }

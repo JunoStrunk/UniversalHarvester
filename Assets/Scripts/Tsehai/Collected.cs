@@ -7,7 +7,7 @@ using TMPro;
 public class Collected : MonoBehaviour
 {
     // PUT THIS ON THE PLANT PARENT
-    public string Pname;
+    
     bool inRange=false;
     public TextMeshProUGUI collect;
     public GameObject E;

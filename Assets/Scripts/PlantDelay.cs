@@ -7,9 +7,7 @@ public class PlantDelay : MonoBehaviour
     public GameObject stage1;
     public GameObject stage2;
     public GameObject stage3;
-    public bool one =true;
-    public bool two=false;
-    public bool three=false;
+    
     public float timer=0;
     // Start is called before the first frame update
     void Start()

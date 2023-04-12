@@ -19,6 +19,7 @@ public class LevelLoadButton : MonoBehaviour
     }
     public void OnClick()
     {
+        Debug.Log("Clicked");
         SceneManager.LoadScene(scenename);
     }
 }

@@ -7,6 +7,7 @@ public class PlantDelay : MonoBehaviour
     public GameObject stage1;
     public GameObject stage2;
     public GameObject stage3;
+    public string plantname;
     
     public float timer=0;
     // Start is called before the first frame update
@@ -18,6 +19,13 @@ public class PlantDelay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(stage1.gameObject.name== "SM_Prop_Carrot_01_S")
+        {
+            plantname = "carrot";
+        } else if (stage1.gameObject.name == "SM_Prop_Eggplant_01_S")
+        {
+            plantname = "eggplant";
+        }
         if (timer >= 0 && timer<15)
         {
             timer += Time.deltaTime;

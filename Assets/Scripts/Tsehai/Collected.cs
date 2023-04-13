@@ -6,46 +6,53 @@ using TMPro;
 
 public class Collected : MonoBehaviour
 {
-    // PUT THIS ON THE PLANT PARENT
+    // PUT THIS ON THE PLANT PARENT (preferably the plot)
+    //THIS CONTROLS E
+    // ik this is called collected but the actual harvesting is in another script
     
-    bool inRange=false;
-    public TextMeshProUGUI collect;
+    public bool inE=false;
+   // public TextMeshProUGUI collect;
     public GameObject E;
+
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
+    
 
     // Update is called once per frame
     void Update()
     {
         if (PlantDelay.instance.done == true)
         {
-            if (inRange == true)
+            if (inE == true)
             {
                 E.SetActive(true);
             }
-            else if (inRange == false)
+            else if (inE == false)
             {
                 E.SetActive(false);
             }
+
+
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            inRange = true;
+            inE = true;
         }
       
     }
-    private void OnTriggerExit(Collider other)
+     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            inRange = false;
+            inE = false;
         }
     }
 }

@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - carrot
+  - potato
+  - eggplant
+  - pepper
+  - cucumber
+  - beet
+  - B1
+  - B2
   layers:
   - Default
   - TransparentFX

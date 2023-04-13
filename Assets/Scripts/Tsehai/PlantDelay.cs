@@ -33,7 +33,11 @@ public class PlantDelay : MonoBehaviour
         } else if (stage1.gameObject.name == "SM_Prop_Eggplant_01_S")
         {
             plantname = "eggplant";
+        } else if (stage1.gameObject.name == "SM_Prop_Potato_01_S")
+        {
+            plantname = "potato";
         }
+
         if (timer >= 0 && timer<15)
         {
             timer += Time.deltaTime;
@@ -58,7 +62,10 @@ public class PlantDelay : MonoBehaviour
             stage2.SetActive(false);
             stage3.SetActive(true);
             done = true;
+            
         }
+
+        
         
 
         // StartCoroutine(GrowthOne());

@@ -19,8 +19,8 @@ public class CropTracker : MonoBehaviour
     public GameObject croptoHarvest;
 
     public static CropTracker instance;
-    
-   
+
+    public bool isHarvested=false;
 
     private void Awake()
     {
@@ -46,7 +46,7 @@ public class CropTracker : MonoBehaviour
                 if (croptoHarvest != null)
                 {
                     croptoHarvest.SetActive(false);
-                    
+                    isHarvested = true;
                 }
             }
 

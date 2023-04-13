@@ -39395,6 +39395,7 @@ MonoBehaviour:
   plotLocation: 
   lookUp: 
   croptoHarvest: {fileID: 0}
+  isHarvested: 0
 --- !u!1001 &601811767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104701,6 +104702,8 @@ MonoBehaviour:
   stage3: {fileID: 606421924}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!4 &1537977106
 Transform:
@@ -104734,6 +104737,8 @@ MonoBehaviour:
   stage3: {fileID: 884239842}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977108
 MonoBehaviour:
@@ -104752,6 +104757,8 @@ MonoBehaviour:
   stage3: {fileID: 1909960336}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977109
 MonoBehaviour:
@@ -104770,6 +104777,8 @@ MonoBehaviour:
   stage3: {fileID: 1648089552}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977110
 MonoBehaviour:
@@ -104788,6 +104797,8 @@ MonoBehaviour:
   stage3: {fileID: 211200608}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977111
 MonoBehaviour:
@@ -104806,6 +104817,8 @@ MonoBehaviour:
   stage3: {fileID: 1197549184}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977112
 MonoBehaviour:
@@ -104824,6 +104837,8 @@ MonoBehaviour:
   stage3: {fileID: 1478554483}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977113
 MonoBehaviour:
@@ -104842,6 +104857,8 @@ MonoBehaviour:
   stage3: {fileID: 962754326}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977114
 MonoBehaviour:
@@ -104860,6 +104877,8 @@ MonoBehaviour:
   stage3: {fileID: 1637671760}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977115
 MonoBehaviour:
@@ -104878,6 +104897,8 @@ MonoBehaviour:
   stage3: {fileID: 405118550}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977116
 MonoBehaviour:
@@ -104896,6 +104917,8 @@ MonoBehaviour:
   stage3: {fileID: 931672785}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1537977117
 MonoBehaviour:
@@ -104914,6 +104937,8 @@ MonoBehaviour:
   stage3: {fileID: 608532268}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!1001 &1545977213
 PrefabInstance:
@@ -123047,6 +123072,8 @@ MonoBehaviour:
   stage3: {fileID: 2073905283}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135309
 MonoBehaviour:
@@ -123065,6 +123092,8 @@ MonoBehaviour:
   stage3: {fileID: 733142886}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135310
 MonoBehaviour:
@@ -123083,6 +123112,8 @@ MonoBehaviour:
   stage3: {fileID: 1433240583}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135311
 MonoBehaviour:
@@ -123101,6 +123132,8 @@ MonoBehaviour:
   stage3: {fileID: 1691532071}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135312
 MonoBehaviour:
@@ -123119,6 +123152,8 @@ MonoBehaviour:
   stage3: {fileID: 1412642010}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135313
 MonoBehaviour:
@@ -123137,6 +123172,8 @@ MonoBehaviour:
   stage3: {fileID: 1271365869}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135314
 MonoBehaviour:
@@ -123155,6 +123192,8 @@ MonoBehaviour:
   stage3: {fileID: 644088410}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135315
 MonoBehaviour:
@@ -123173,6 +123212,8 @@ MonoBehaviour:
   stage3: {fileID: 165388720}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135316
 MonoBehaviour:
@@ -123191,6 +123232,8 @@ MonoBehaviour:
   stage3: {fileID: 1751892689}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135317
 MonoBehaviour:
@@ -123209,6 +123252,8 @@ MonoBehaviour:
   stage3: {fileID: 222070661}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135318
 MonoBehaviour:
@@ -123227,6 +123272,8 @@ MonoBehaviour:
   stage3: {fileID: 253265126}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!114 &1837135319
 MonoBehaviour:
@@ -123245,6 +123292,8 @@ MonoBehaviour:
   stage3: {fileID: 1685194822}
   plantname: 
   done: 0
+  Manager: {fileID: 0}
+  planted: 1
   timer: 0
 --- !u!1 &1840016384
 GameObject:

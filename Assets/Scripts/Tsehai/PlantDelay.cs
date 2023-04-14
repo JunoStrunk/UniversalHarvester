@@ -13,8 +13,9 @@ public class PlantDelay : MonoBehaviour
 
 
     public string plantname;
+   
     public bool done=false;
-    public static PlantDelay instance;
+   
     
 
     //there is nothing putting this back to true fyi. Will work in with kinnara's script once its done
@@ -27,26 +28,26 @@ public class PlantDelay : MonoBehaviour
     {
         
     }
-    private void Awake()
-    {
-        instance = this;
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
+        
         //this sets what type of crop is active. Will rework
         if (planted == true)
         {
-            if (stage1.gameObject.name == "SM_Prop_Carrot_01_S")
+            
+    
+            if (stage1.name == "First carrot")
             {
                 plantname = "carrot";
             }
-            else if (stage1.gameObject.name == "SM_Prop_Eggplant_01_S")
+            else if (stage1.name == "First eggplant")
             {
                 plantname = "eggplant";
             }
-            else if (stage1.gameObject.name == "SM_Prop_Potato_01_S")
+            else if (stage1.name == "First potato")
             {
                 plantname = "potato";
             }

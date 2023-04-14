@@ -12,6 +12,7 @@ TagManager:
   - beet
   - B1
   - B2
+  - GrowthManager
   layers:
   - Default
   - TransparentFX

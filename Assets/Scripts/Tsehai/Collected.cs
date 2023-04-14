@@ -12,7 +12,8 @@ public class Collected : MonoBehaviour
     //it should be called E
     
     public bool inE=false;
-   // public TextMeshProUGUI collect;
+    // public TextMeshProUGUI collect;
+    public GameObject noClue;
     public GameObject E;
 
 
@@ -26,18 +27,24 @@ public class Collected : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlantDelay.instance.done == true && InRange.instance.inRange == true)
+        noClue = CropTracker.instance.managerSpecific;
+        if (noClue != null)
         {
-            if (inE == true)
-            {
-                E.SetActive(true);
-            }
-            else if (inE == false)
-            {
-                E.SetActive(false);
-            }
 
 
+            if (noClue.GetComponent<PlantDelay>().done == true && CropTracker.instance.inRange == true)
+            {
+                if (inE == true)
+                {
+                    E.SetActive(true);
+                }
+                else if (inE == false)
+                {
+                    E.SetActive(false);
+                }
+
+
+            }
         }
     }
 

@@ -12,7 +12,7 @@ public class CropTracker : MonoBehaviour
     public int beets;
     public float earnedMoney;
     
-    //These four control which plot is being interacted with and the plant type
+    //These  control which plot is being interacted with and the plant type
     public string plantType;
     public string plotLocation;
     public string lookUp;
@@ -21,6 +21,12 @@ public class CropTracker : MonoBehaviour
     public static CropTracker instance;
 
     public bool isHarvested=false;
+    public bool inRange = false;
+    
+    public string manager;
+  
+    public GameObject managerSpecific;
+    
 
     private void Awake()
     {
@@ -35,23 +41,34 @@ public class CropTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        plantType = PlantDelay.instance.plantname;
-        if (PlantDelay.instance.done == true && InRange.instance.inRange == true)
+        //finds the growthmanager
+        if (inRange == true)
         {
-            lookUp = plotLocation + plantType;
-            croptoHarvest = GameObject.Find(lookUp);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log(plotLocation + plantType);
-                if (croptoHarvest != null)
-                {
-                    croptoHarvest.SetActive(false);
-                    isHarvested = true;
-                }
-            }
+            manager =  GameObject.Find(plotLocation +"GrowthManager").name;
+            managerSpecific = GameObject.Find(manager);
 
         }
+        //using said growthmanager, finds the crop the player is in
+        if (managerSpecific != null)
+        {
+            plantType = managerSpecific.GetComponent<PlantDelay>().plantname;
+            if (managerSpecific.GetComponent<PlantDelay>().done == true && inRange == true)
+            {
+                lookUp = plotLocation + plantType;
+                croptoHarvest = GameObject.Find(lookUp);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
 
+                    if (croptoHarvest != null)
+                    {
+                        Debug.Log(plotLocation + plantType);
+                        croptoHarvest.SetActive(false);
+                        isHarvested = true;
+                    }
+                }
+
+            }
+        }
 
     }
     
@@ -62,27 +79,35 @@ public class CropTracker : MonoBehaviour
         if (other.gameObject.tag == "B1")
         {
             plotLocation = "B1 ";
+            inRange = true;
         } else if (other.gameObject.tag == "B2")
         {
             plotLocation = "B2 ";
+            inRange = true;
         } else if (other.gameObject.tag == "B3")
         {
             plotLocation = "B3 ";
+            inRange = true;
         } else if (other.gameObject.tag == "B4")
         {
             plotLocation = "B4 ";
+            inRange = true;
         } else if (other.gameObject.tag == "A1")
         {
             plotLocation = "A1 ";
+            inRange = true;
         } else if (other.gameObject.tag == "A2")
         {
             plotLocation = "A2 ";
+            inRange = true;
         } else if (other.gameObject.tag == "A3")
         {
             plotLocation = "A3 ";
+            inRange = true;
         } else if (other.gameObject.tag == "A4")
         {
             plotLocation = "A4 ";
+            inRange = true;
         }
     }
 
@@ -92,6 +117,7 @@ public class CropTracker : MonoBehaviour
         {
             plotLocation = "";
             croptoHarvest = null;
+            inRange = false;
         }
     }
 }

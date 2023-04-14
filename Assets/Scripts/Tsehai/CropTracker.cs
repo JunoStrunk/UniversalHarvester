@@ -48,7 +48,7 @@ public class CropTracker : MonoBehaviour
             managerSpecific = GameObject.Find(manager);
 
         }
-        //using said growthmanager, finds the crop the player is in
+        //using said growthmanager, find the active plant
         if (managerSpecific != null)
         {
             plantType = managerSpecific.GetComponent<PlantDelay>().plantname;
@@ -66,6 +66,11 @@ public class CropTracker : MonoBehaviour
                         isHarvested = true;
                     }
                 }
+
+            }
+       
+            if(isHarvested==true && managerSpecific.GetComponent<PlantDelay>().done== true)
+            {
 
             }
         }

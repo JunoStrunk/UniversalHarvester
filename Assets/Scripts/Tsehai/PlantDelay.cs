@@ -15,6 +15,9 @@ public class PlantDelay : MonoBehaviour
     public string plantname;
    
     public bool done=false;
+
+    public GameObject resetSpecific;
+    public PlantDelay reset;
    
     
 
@@ -80,23 +83,25 @@ public class PlantDelay : MonoBehaviour
             }
             if (CropTracker.instance.isHarvested == true)
             {
-                
-                Reset();
-                //TURN THIS BACK ON IN KINNARA PLANT SCRIPT 
-              //  CropTracker.instance.isHarvested = false;
+               // Reset();
             }
         }
     }
 
      void Reset()
     {
+        resetSpecific = CropTracker.instance.managerSpecific;
+        reset = resetSpecific.GetComponent<PlantDelay>();
+        reset.timer = 0;
+        
+
          Debug.Log("Reset");
-         timer = 0;
+      /*   timer = 0;
          stage1.SetActive(false);
          stage2.SetActive(false);
          stage3.SetActive(false);
          done = false;
-        planted = false;
+        planted = false; */
        
     }
 }

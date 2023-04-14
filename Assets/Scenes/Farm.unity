@@ -88648,6 +88648,8 @@ MonoBehaviour:
   stage3: {fileID: 1847831254}
   plantname: 
   done: 0
+  resetSpecific: {fileID: 0}
+  reset: {fileID: 0}
   planted: 1
   timer: 0
 --- !u!1001 &1540996028
@@ -130617,6 +130619,8 @@ MonoBehaviour:
   stage3: {fileID: 656519068}
   plantname: 
   done: 0
+  resetSpecific: {fileID: 0}
+  reset: {fileID: 0}
   planted: 1
   timer: 0
 --- !u!1 &1840016384
@@ -138165,7 +138169,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2068147889}
-  - component: {fileID: 2068147890}
   m_Layer: 0
   m_Name: GrowthManagers
   m_TagString: Untagged
@@ -138190,33 +138193,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2068147890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068147888}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27bd295474758394babdc12c62e3ece3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carrot: 0
-  potato: 0
-  eggplant: 0
-  peppers: 0
-  cucumbers: 0
-  beets: 0
-  earnedMoney: 0
-  plantType: 
-  plotLocation: 
-  lookUp: 
-  croptoHarvest: {fileID: 0}
-  isHarvested: 0
-  inRange: 0
-  manager: 
-  managerSpecific: {fileID: 0}
 --- !u!1 &2097058534
 GameObject:
   m_ObjectHideFlags: 0

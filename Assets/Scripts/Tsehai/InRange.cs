@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class InRange : MonoBehaviour
 {
+    //checks if in range of specific plot
     public static InRange instance;
     public bool inRange=false;
+
+
     // Start is called before the first frame update
      void Awake()
     {

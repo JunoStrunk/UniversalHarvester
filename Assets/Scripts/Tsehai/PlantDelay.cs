@@ -5,21 +5,27 @@ using UnityEngine;
 public class PlantDelay : MonoBehaviour
 {
     //PUT THIS ON A MANAGER
+
+    //controls growing
     public GameObject stage1;
     public GameObject stage2;
     public GameObject stage3;
+
+
     public string plantname;
     public bool done=false;
     public static PlantDelay instance;
-    public GameObject Manager;
+    
 
+    //there is nothing putting this back to true fyi. Will work in with kinnara's script once its done
+    //Ideally this bool turns on when a crop is planted
     public bool planted=true;
 
     public float timer=0;
     // Start is called before the first frame update
     void Start()
     {
-        Manager = this.gameObject;  
+        
     }
     private void Awake()
     {
@@ -29,6 +35,7 @@ public class PlantDelay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //this sets what type of crop is active. Will rework
         if (planted == true)
         {
             if (stage1.gameObject.name == "SM_Prop_Carrot_01_S")
@@ -49,7 +56,7 @@ public class PlantDelay : MonoBehaviour
                 timer += Time.deltaTime;
             }
 
-            if (timer >= 0 && timer < 5)
+            if (timer >= 0 && timer < 5 && planted == true)
             {
                 stage1.SetActive(true);
                 stage2.SetActive(false);
@@ -72,8 +79,10 @@ public class PlantDelay : MonoBehaviour
             }
             if (CropTracker.instance.isHarvested == true)
             {
+                
                 Reset();
-                CropTracker.instance.isHarvested = false;
+                //TURN THIS BACK ON IN KINNARA PLANT SCRIPT 
+              //  CropTracker.instance.isHarvested = false;
             }
         }
     }
@@ -85,7 +94,8 @@ public class PlantDelay : MonoBehaviour
          stage1.SetActive(false);
          stage2.SetActive(false);
          stage3.SetActive(false);
-         done = false; 
+         done = false;
+        planted = false;
        
     }
 }

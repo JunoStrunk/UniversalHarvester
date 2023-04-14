@@ -8,7 +8,8 @@ public class Collected : MonoBehaviour
 {
     // PUT THIS ON THE PLANT PARENT (preferably the plot)
     //THIS CONTROLS E
-    // ik this is called collected but the actual harvesting is in another script
+    // ik this is called collected but the actual harvesting is in CropTracker lol
+    //it should be called E
     
     public bool inE=false;
    // public TextMeshProUGUI collect;
@@ -25,7 +26,7 @@ public class Collected : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlantDelay.instance.done == true)
+        if (PlantDelay.instance.done == true && InRange.instance.inRange == true)
         {
             if (inE == true)
             {

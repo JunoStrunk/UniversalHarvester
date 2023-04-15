@@ -51,6 +51,9 @@ public class PlantDelay : MonoBehaviour
             else if (stage1.name == "First potato")
             {
                 plantname = "potato";
+            } else if (stage1.name == "First pepper")
+            {
+                plantname = "pepper";
             }
 
             if (timer >= 0 && timer < 15)
@@ -58,20 +61,20 @@ public class PlantDelay : MonoBehaviour
                 timer += Time.deltaTime;
             }
 
-            if (timer >= 0 && timer < 5 && planted == true)
+            if (timer >= 0 && timer < 3 && planted == true)
             {
                 stage1.SetActive(true);
                 stage2.SetActive(false);
                 stage3.SetActive(false);
 
             }
-            if (timer >= 5 && timer < 10)
+            if (timer >= 3 && timer < 6)
             {
                 stage1.SetActive(false);
                 stage2.SetActive(true);
                 stage3.SetActive(false);
             }
-            if (timer >= 10 && timer < 15)
+            if (timer >= 6 && timer < 9)
             {
                 stage1.SetActive(false);
                 stage2.SetActive(false);

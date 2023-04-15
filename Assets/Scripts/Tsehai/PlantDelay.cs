@@ -16,9 +16,7 @@ public class PlantDelay : MonoBehaviour
    
     public bool done=false;
 
-    public GameObject resetSpecific;
-    public PlantDelay reset;
-   
+    
     
 
     //there is nothing putting this back to true fyi. Will work in with kinnara's script once its done
@@ -90,10 +88,7 @@ public class PlantDelay : MonoBehaviour
 
      void Reset()
     {
-        resetSpecific = CropTracker.instance.managerSpecific;
-        reset = resetSpecific.GetComponent<PlantDelay>();
-        reset.timer = 0;
-        
+           
 
          Debug.Log("Reset");
       /*   timer = 0;

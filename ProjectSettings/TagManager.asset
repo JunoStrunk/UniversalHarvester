@@ -4,12 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - carrot
-  - potato
-  - eggplant
-  - pepper
-  - cucumber
-  - beet
   - B1
   - B2
   - GrowthManager

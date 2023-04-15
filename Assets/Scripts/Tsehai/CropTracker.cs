@@ -71,7 +71,10 @@ public class CropTracker : MonoBehaviour
        
             if(isHarvested==true && managerSpecific.GetComponent<PlantDelay>().done== true)
             {
-
+                managerSpecific.GetComponent<PlantDelay>().timer = 0;
+                managerSpecific.GetComponent<PlantDelay>().done = false;
+                isHarvested = false;
+                managerSpecific.GetComponent<PlantDelay>().planted = false;
             }
         }
 

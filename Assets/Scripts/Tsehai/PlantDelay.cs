@@ -35,11 +35,11 @@ public class PlantDelay : MonoBehaviour
     void Update()
     {
         
-        //this sets what type of crop is active. Will rework
+        
         if (planted == true)
         {
-            
-    
+
+            //this sets what type of crop is active. Will rework
             if (stage1.name == "First carrot")
             {
                 plantname = "carrot";

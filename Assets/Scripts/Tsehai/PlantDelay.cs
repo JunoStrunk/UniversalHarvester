@@ -54,6 +54,12 @@ public class PlantDelay : MonoBehaviour
             } else if (stage1.name == "First pepper")
             {
                 plantname = "pepper";
+            } else if (stage1.name == "First beet")
+            {
+                plantname = "beet";
+            } else if (stage1.name == "pumpkin")
+            {
+                plantname = "pumpkin";
             }
 
             if (timer >= 0 && timer < 15)

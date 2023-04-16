@@ -57,7 +57,7 @@ public class PlantDelay : MonoBehaviour
             } else if (stage1.name == "First beet")
             {
                 plantname = "beet";
-            } else if (stage1.name == "pumpkin")
+            } else if (stage1.name == "First pumpkin")
             {
                 plantname = "pumpkin";
             }
@@ -90,6 +90,7 @@ public class PlantDelay : MonoBehaviour
             }
             if (CropTracker.instance.isHarvested == true)
             {
+                //moved to CropTracker
                // Reset();
             }
         }

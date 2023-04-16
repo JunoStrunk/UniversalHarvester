@@ -41,7 +41,7 @@ public class CropTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //finds the growthmanager
+        //finds the growthmanager for the plot the player is in
         if (inRange == true)
         {
             manager =  GameObject.Find(plotLocation +"GrowthManager").name;
@@ -68,7 +68,7 @@ public class CropTracker : MonoBehaviour
                 }
 
             }
-       
+               //reseter
             if(isHarvested==true && managerSpecific.GetComponent<PlantDelay>().done== true)
             {
                 managerSpecific.GetComponent<PlantDelay>().timer = 0;

@@ -22,7 +22,7 @@ public class HeldItem : MonoBehaviour
 		if (canPickUp && Input.GetKeyDown(KeyCode.E))
 		{
 			heldItem = heldRef;
-			heldRef.transform.SetParent(this.gameObject);
+			//heldRef.transform.SetParent(this.gameObject);
 		}
 	}
 

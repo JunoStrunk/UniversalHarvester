@@ -17,6 +17,7 @@ public class CropTracker : MonoBehaviour
     public float earnedMoney;
     public string totint;
     public string numToPrintint;
+    public int xp;
     
     //These  control which plot is being interacted with and the plant type
     public string plantType;
@@ -102,11 +103,14 @@ public class CropTracker : MonoBehaviour
             carrottot += 12;
             numToPrint = 12;
             totint = carrottot.ToString("0");
+            xp = 10;
+
             
         } else if (plantType == "eggplant")
         {
             eggplanttot += 24;
             numToPrint = 24;
+            xp = 15;
             totint = eggplanttot.ToString("0");
         } else if (plantType == "potato")
         {
@@ -117,17 +121,20 @@ public class CropTracker : MonoBehaviour
         {
             pepperstot += 84;
             numToPrint = 84;
+            xp = 5;
             totint = pepperstot.ToString("0");
         } else if (plantType == "beet")
         {
             beetstot += 20;
             numToPrint = 20;
+            xp = 10;
             totint = beetstot.ToString("0");
         } else if (plantType == "pumpkin")
         {
             pumpkintot += 4;
             numToPrint = 4;
             totint = pumpkintot.ToString("0");
+            xp = 60;
         }
         numToPrintint = numToPrint.ToString("0");
     }

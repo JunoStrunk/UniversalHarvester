@@ -13,9 +13,9 @@ public class plant_seed : MonoBehaviour
     public GameObject beets;
 
     // Start is called before the first frame update
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider collider)
     {
-        if (col.gameObject.tag == "Player")
+        if (collider.tag == "plot")
         {
             Inventory_UI.SetActive(true);
         }

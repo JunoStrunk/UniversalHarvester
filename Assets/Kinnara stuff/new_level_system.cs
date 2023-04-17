@@ -31,12 +31,13 @@ public class new_level_system : MonoBehaviour
             current_xp = 0;
             level_name.text = "Level: " + (level + 1);
         }
-        if (CropTracker.instance.isHarvested==true)
+        if (CropTracker.instance.isHarvestedKin==true)
         {
             current_xp += CropTracker.instance.xp;
+            Debug.Log(CropTracker.instance.xp);
             xp_bar.fillAmount = current_xp / required_xp;
             Debug.Log("Harvested, " + xp_bar.fillAmount);
-            CropTracker.instance.isHarvested = false;
+            CropTracker.instance.isHarvestedKin = false;
         }
     }
 }

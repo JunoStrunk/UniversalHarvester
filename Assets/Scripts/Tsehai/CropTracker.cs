@@ -28,6 +28,7 @@ public class CropTracker : MonoBehaviour
     public static CropTracker instance;
 
     public bool isHarvested=false;
+    public bool isHarvestedKin = false;
     public bool inRange = false;
     
     //this stuff is important
@@ -75,6 +76,7 @@ public class CropTracker : MonoBehaviour
                         Debug.Log(plotLocation + plantType);
                         croptoHarvest.SetActive(false);
                         isHarvested = true;
+                        isHarvestedKin = true;
                         signBoardandMessage.SetActive(true);
                         Plant();
                         Message.text = "You got " + numToPrintint +" " + plantType + "s. You have " + totint +" " + plantType + "s.";

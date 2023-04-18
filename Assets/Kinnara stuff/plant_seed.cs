@@ -10,13 +10,16 @@ public class plant_seed : MonoBehaviour
     public string toGrow;
     public GameObject lookUp;
     public GameObject managerS;
+    public bool taken;
 
     public bool planted_kin = false;
-    private void Update()
+     void Update()
     {
         if (CropTracker.instance.inRange == true)
         {
             managerS = CropTracker.instance.managerSpecific;
+            taken = managerS.GetComponent<PlantDelay>().hasCrop;
+
         }
     }
   
@@ -24,9 +27,10 @@ public class plant_seed : MonoBehaviour
     {  
         if (collider.tag == "B1" || collider.tag == "B2" || collider.tag == "B3" || collider.tag == "B4" || collider.tag == "A1" || collider.tag == "A2" || collider.tag == "A3" || collider.tag == "A4")
         {
-            if (planted_kin == false && managerS.GetComponent<PlantDelay>().hasCrop==false)
+            if (taken == false)
             {
                 Inventory_UI.SetActive(true);
+
             }
         }
     }
@@ -49,6 +53,7 @@ public class plant_seed : MonoBehaviour
             Debug.Log("Planted carrots in plot " + plotLoc);
             CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
             planted_kin = true;
+
 
             Inventory_UI.SetActive(false);
         }

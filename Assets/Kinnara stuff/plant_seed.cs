@@ -11,24 +11,46 @@ public class plant_seed : MonoBehaviour
     public GameObject peppers;
     public GameObject cucumbers;
     public GameObject beets;
+    public string plotLoc;
+    public string toGrow;
+    public GameObject lookUp;
 
-    bool planted_kin = false;
+   public bool planted_kin = false;
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "plot" && !planted_kin)
+        if (collider.tag == "B1"||collider.tag=="B2"||collider.tag=="B3"||collider.tag=="B4"||collider.tag=="A1"||collider.tag=="A2"||collider.tag=="A3"||collider.tag=="A4")
         {
-            Inventory_UI.SetActive(true);
+            if (planted_kin==false)
+            {
+                Inventory_UI.SetActive(true);
+            }
         }
     }
 
     public void PlantCarrot()
     {
-        Debug.Log("Planted carrots");
-        carrots.SetActive(true);
-        planted_kin = true;
-        Inventory_UI.SetActive(false);
+        plotLoc = CropTracker.instance.plotLocation;
+        toGrow = plotLoc + "carrot";
+        lookUp = GameObject.Find(toGrow);
+        if (plotLoc != null)
+        {
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 = lookUp.transform.GetChild(0).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage2 = lookUp.transform.GetChild(1).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage3 = lookUp.transform.GetChild(2).gameObject;
+            Debug.Log(CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1);
+            if (CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 == null)
+            {
+
+            }
+            Debug.Log("Planted carrots in plot " + plotLoc);
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
+            // carrots.SetActive(true);
+            planted_kin = true;
+
+            Inventory_UI.SetActive(false);
+        }
     }
 
     public void PlantPotatoes()

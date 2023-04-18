@@ -21,7 +21,7 @@ public class PlantDelay : MonoBehaviour
 
     //there is nothing putting this back to true fyi. Will work in with kinnara's script once its done
     //Ideally this bool turns on when a crop is planted
-    public bool planted=true;
+    public bool planted;
 
     public float timer=0;
     // Start is called before the first frame update

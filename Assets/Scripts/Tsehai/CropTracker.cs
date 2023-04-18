@@ -74,7 +74,7 @@ public class CropTracker : MonoBehaviour
                     if (croptoHarvest != null)
                     {
                         Debug.Log(plotLocation + plantType);
-                        croptoHarvest.SetActive(false);
+                        managerSpecific.GetComponent<PlantDelay>().stage3.SetActive(false);
                         isHarvested = true;
                         isHarvestedKin = true;
                         signBoardandMessage.SetActive(true);
@@ -86,6 +86,8 @@ public class CropTracker : MonoBehaviour
                 }
 
             }
+
+           
                //reseter
             if(isHarvested==true && managerSpecific.GetComponent<PlantDelay>().done== true)
             {
@@ -93,11 +95,17 @@ public class CropTracker : MonoBehaviour
                 managerSpecific.GetComponent<PlantDelay>().done = false;
                 isHarvested = false;
                 managerSpecific.GetComponent<PlantDelay>().planted = false;
+                this.GetComponent<plant_seed>().planted_kin = false;
             }
         }
 
     }
-    
+
+     IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(3);
+        signBoardandMessage.SetActive(false);
+    }
    void Plant()
     {
         if (plantType == "carrot")

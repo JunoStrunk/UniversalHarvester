@@ -80,7 +80,7 @@ public class CropTracker : MonoBehaviour
                         signBoardandMessage.SetActive(true);
                         Plant();
                         Message.text = "You got " + numToPrintint +" " + plantType + "s. You have " + totint +" " + plantType + "s.";
-
+                        StartCoroutine(Waiting());
 
                     }
                 }
@@ -96,6 +96,7 @@ public class CropTracker : MonoBehaviour
                 isHarvested = false;
                 managerSpecific.GetComponent<PlantDelay>().planted = false;
                 this.GetComponent<plant_seed>().planted_kin = false;
+                managerSpecific.GetComponent<PlantDelay>().hasCrop = false;
             }
         }
 

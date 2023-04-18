@@ -5,24 +5,26 @@ using UnityEngine;
 public class plant_seed : MonoBehaviour
 {
     public GameObject Inventory_UI;
-    public GameObject carrots;
-    public GameObject potatoes;
-    public GameObject eggplant;
-    public GameObject peppers;
-    public GameObject cucumbers;
-    public GameObject beets;
+   
     public string plotLoc;
     public string toGrow;
     public GameObject lookUp;
+    public GameObject managerS;
 
-   public bool planted_kin = false;
-
-    // Start is called before the first frame update
-    void OnTriggerEnter(Collider collider)
+    public bool planted_kin = false;
+    private void Update()
     {
-        if (collider.tag == "B1"||collider.tag=="B2"||collider.tag=="B3"||collider.tag=="B4"||collider.tag=="A1"||collider.tag=="A2"||collider.tag=="A3"||collider.tag=="A4")
+        if (CropTracker.instance.inRange == true)
         {
-            if (planted_kin==false)
+            managerS = CropTracker.instance.managerSpecific;
+        }
+    }
+  
+    void OnTriggerEnter(Collider collider)
+    {  
+        if (collider.tag == "B1" || collider.tag == "B2" || collider.tag == "B3" || collider.tag == "B4" || collider.tag == "A1" || collider.tag == "A2" || collider.tag == "A3" || collider.tag == "A4")
+        {
+            if (planted_kin == false && managerS.GetComponent<PlantDelay>().hasCrop==false)
             {
                 Inventory_UI.SetActive(true);
             }
@@ -46,7 +48,6 @@ public class plant_seed : MonoBehaviour
             }
             Debug.Log("Planted carrots in plot " + plotLoc);
             CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
-            // carrots.SetActive(true);
             planted_kin = true;
 
             Inventory_UI.SetActive(false);
@@ -55,36 +56,120 @@ public class plant_seed : MonoBehaviour
 
     public void PlantPotatoes()
     {
-        potatoes.SetActive(true);
-        planted_kin = true;
-        Inventory_UI.SetActive(false);
+        plotLoc = CropTracker.instance.plotLocation;
+        toGrow = plotLoc + "potato";
+        lookUp = GameObject.Find(toGrow);
+        if (plotLoc != null)
+        {
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 = lookUp.transform.GetChild(0).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage2 = lookUp.transform.GetChild(1).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage3 = lookUp.transform.GetChild(2).gameObject;
+            Debug.Log(CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1);
+            if (CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 == null)
+            {
+
+            }
+            Debug.Log("Planted potatoes in plot " + plotLoc);
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
+       
+            planted_kin = true;
+            Inventory_UI.SetActive(false);
+        }
     }
 
     public void PlantEggplant()
     {
-        eggplant.SetActive(true);
-        planted_kin = true;
-        Inventory_UI.SetActive(false);
+        plotLoc = CropTracker.instance.plotLocation;
+        toGrow = plotLoc + "eggplant";
+        lookUp = GameObject.Find(toGrow);
+        if (plotLoc != null)
+        {
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 = lookUp.transform.GetChild(0).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage2 = lookUp.transform.GetChild(1).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage3 = lookUp.transform.GetChild(2).gameObject;
+            Debug.Log(CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1);
+            if (CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 == null)
+            {
+
+            }
+            Debug.Log("Planted eggplant in plot " + plotLoc);
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
+            planted_kin = true;
+            Inventory_UI.SetActive(false);
+        }
     }
 
     public void PlantPeppers()
     {
-        peppers.SetActive(true);
-        planted_kin = true;
-        Inventory_UI.SetActive(false);
+        plotLoc = CropTracker.instance.plotLocation;
+        toGrow = plotLoc + "pepper";
+        lookUp = GameObject.Find(toGrow);
+        if (plotLoc != null)
+        {
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 = lookUp.transform.GetChild(0).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage2 = lookUp.transform.GetChild(1).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage3 = lookUp.transform.GetChild(2).gameObject;
+            Debug.Log(CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1);
+            if (CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 == null)
+            {
+
+            }
+            Debug.Log("Planted peppers in plot " + plotLoc);
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
+            planted_kin = true;
+            Inventory_UI.SetActive(false);
+        }
     }
 
-    public void PlantCucumbers()
+    public void PlantPumpkin()
     {
-        cucumbers.SetActive(true);
-        planted_kin = true;
-        Inventory_UI.SetActive(false);
-    }
+        plotLoc = CropTracker.instance.plotLocation;
+        toGrow = plotLoc + "pumpkin";
+        lookUp = GameObject.Find(toGrow);
+        if (plotLoc != null)
+        {
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 = lookUp.transform.GetChild(0).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage2 = lookUp.transform.GetChild(1).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage3 = lookUp.transform.GetChild(2).gameObject;
+            Debug.Log(CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1);
+            if (CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 == null)
+            {
 
+            }
+            Debug.Log("Planted pumpkin in plot " + plotLoc);
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
+            planted_kin = true;
+            Inventory_UI.SetActive(false);
+        }
+    }
     public void PlantBeets()
     {
-        beets.SetActive(true);
-        planted_kin = true;
-        Inventory_UI.SetActive(false);
+        plotLoc = CropTracker.instance.plotLocation;
+        toGrow = plotLoc + "beet";
+        lookUp = GameObject.Find(toGrow);
+        if (plotLoc != null)
+        {
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 = lookUp.transform.GetChild(0).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage2 = lookUp.transform.GetChild(1).gameObject;
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage3 = lookUp.transform.GetChild(2).gameObject;
+            Debug.Log(CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1);
+            if (CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().stage1 == null)
+            {
+
+            }
+            Debug.Log("Planted beets in plot " + plotLoc);
+            CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
+            planted_kin = true;
+            Inventory_UI.SetActive(false);
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "B1" || col.tag == "B2" || col.tag == "B3" || col.tag == "B4" || col.tag == "A1" || col.tag == "A2" || col.tag == "A3" || col.tag == "A4")
+        {
+            Inventory_UI.SetActive(false);
+        }
     }
 }
+

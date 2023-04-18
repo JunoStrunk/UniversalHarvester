@@ -15,6 +15,7 @@ public class PlantDelay : MonoBehaviour
     public string plantname;
    
     public bool done=false;
+    public bool hasCrop = false;
 
     
     
@@ -38,7 +39,7 @@ public class PlantDelay : MonoBehaviour
         
         if (planted == true)
         {
-
+            hasCrop = true;
             //this sets what type of crop is active. Will rework
             if (stage1.name == "First carrot")
             {
@@ -86,6 +87,7 @@ public class PlantDelay : MonoBehaviour
                 stage2.SetActive(false);
                 stage3.SetActive(true);
                 done = true;
+                
 
             }
             if (CropTracker.instance.isHarvested == true)

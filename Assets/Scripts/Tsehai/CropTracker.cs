@@ -6,19 +6,24 @@ using TMPro;
 
 public class CropTracker : MonoBehaviour
 {
-   
+    [HideInInspector]
     public int carrottot;
+    [HideInInspector]
     public int potatotot;
+    [HideInInspector]
     public int eggplanttot;
+    [HideInInspector]
     public int pepperstot;
+    [HideInInspector]
     public int pumpkintot;
+    [HideInInspector]
     public int beetstot;
+    
     public int numToPrint;
-    public float earnedMoney;
     public string totint;
     public string numToPrintint;
     public int xp;
-    
+   
     //These  control which plot is being interacted with and the plant type
     public string plantType;
     public string plotLocation;
@@ -30,15 +35,61 @@ public class CropTracker : MonoBehaviour
     public bool isHarvested=false;
     public bool isHarvestedKin = false;
     public bool inRange = false;
-    
+
     //this stuff is important
+    [HideInInspector]
     public string manager;
     public GameObject managerSpecific;
 
     //message that appears when you harvest
     public GameObject signBoardandMessage;
     public TextMeshProUGUI Message;
-    
+
+    //Inventory stuff
+    public GameObject InventoryUI;
+    public TextMeshProUGUI carrotSeed;
+    public TextMeshProUGUI potatoSeed;
+    public TextMeshProUGUI eggplantSeed;
+    public TextMeshProUGUI pepperSeed;
+    public TextMeshProUGUI pumpkinSeed; 
+    public TextMeshProUGUI beetSeed;
+    public int carrotseed = 0;
+    public int potatoseed = 0;
+    public int eggplantseed = 0;
+    public int pepperseed = 0;
+    public int pumpkinseed = 0;
+    public int beetseed = 0;
+    [HideInInspector]
+    public string carrotSeedString;
+    [HideInInspector]
+    public string potatoSeedString;
+    [HideInInspector]
+    public string eggplantSeedString;
+    [HideInInspector]
+    public string pepperSeedString;
+    [HideInInspector]
+    public string pumpkinSeedString;
+    [HideInInspector]
+    public string beetSeedString;
+    public TextMeshProUGUI carrotI;
+    public TextMeshProUGUI potatoI;
+    public TextMeshProUGUI eggplantI;
+    public TextMeshProUGUI pepperI;
+    public TextMeshProUGUI pumpkinI;
+    public TextMeshProUGUI beetI;
+    [HideInInspector]
+    public string carrotString;
+    [HideInInspector]
+    public string potatoString;
+    [HideInInspector]
+    public string eggplantString;
+    [HideInInspector]
+    public string pepperString;
+    [HideInInspector]
+    public string pumpkinString;
+    [HideInInspector]
+    public string beetString;
+
 
     private void Awake()
     {
@@ -86,8 +137,6 @@ public class CropTracker : MonoBehaviour
                 }
 
             }
-
-           
                //reseter
             if(isHarvested==true && managerSpecific.GetComponent<PlantDelay>().done== true)
             {
@@ -100,6 +149,49 @@ public class CropTracker : MonoBehaviour
             }
         }
 
+        //pulls up inventory
+        if (Input.GetKeyDown(KeyCode.Tab) && InventoryUI.activeSelf==false)
+        {
+            InventoryUI.SetActive(true);
+            InventoryNumbers();
+           
+        } else if (Input.GetKeyDown(KeyCode.Tab) && InventoryUI.activeSelf == true)
+        {
+            InventoryUI.SetActive(false);
+           
+        }
+
+    }
+
+    void InventoryNumbers()
+    {
+        //seed
+        carrotSeedString = carrotseed.ToString("0");
+        carrotSeed.text = carrotSeedString;
+        potatoSeedString = potatoseed.ToString("0");
+        potatoSeed.text = potatoSeedString;
+        eggplantSeedString = eggplantseed.ToString("0");
+        eggplantSeed.text = eggplantSeedString;
+        pepperSeedString = pepperseed.ToString("0");
+        pepperSeed.text = pepperSeedString;
+        pumpkinSeedString = pumpkinseed.ToString("0");
+        pumpkinSeed.text = pumpkinSeedString;
+        beetSeedString = beetseed.ToString("0");
+        beetSeed.text = beetSeedString;
+
+        //crop
+        carrotString = carrottot.ToString("0");
+        carrotI.text = carrotString;
+        potatoString = potatotot.ToString("0");
+        potatoI.text = potatoString;
+        eggplantString = eggplanttot.ToString("0");
+        eggplantI.text = eggplantString;
+        pepperString = pepperstot.ToString("0");
+        pepperI.text = pepperString;
+        pumpkinString = pumpkintot.ToString("0");
+        pumpkinI.text = pumpkinString;
+        beetString = beetstot.ToString("0");
+        beetI.text = beetString;
     }
 
      IEnumerator Waiting()

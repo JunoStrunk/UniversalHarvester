@@ -46,6 +46,10 @@ public class Collected : MonoBehaviour
 
             }
         }
+        if (inE == false)
+        {
+            E.SetActive(false);
+        }
     }
 
      void OnTriggerEnter(Collider other)
@@ -58,7 +62,7 @@ public class Collected : MonoBehaviour
     }
      void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag == "Player")
         {
             inE = false;
         }

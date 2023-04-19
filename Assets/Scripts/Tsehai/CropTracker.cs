@@ -196,7 +196,7 @@ public class CropTracker : MonoBehaviour
 
      IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         signBoardandMessage.SetActive(false);
     }
    void Plant()

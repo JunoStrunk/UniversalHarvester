@@ -7,6 +7,10 @@ namespace Algorand.Unity.Samples.WalletConnect
 {
     public class WalletConnectManager : MonoBehaviour
     {
+        public GameObject buttons;
+        public static string addresss;
+
+
         [FormerlySerializedAs("DappMeta")] public ClientMeta dappMeta;
 
         [FormerlySerializedAs("BridgeUrl")] public string bridgeUrl;
@@ -74,6 +78,7 @@ namespace Algorand.Unity.Samples.WalletConnect
                     break;
                 case SessionStatus.WalletConnected:
                     walletConnectCanvas.connectedAccount.text = $"Connected Account: {account.Address}";
+                    addresss = account.Address;
                     var balanceAlgos = currentBalance / (double)MicroAlgos.PerAlgo;
                     walletConnectCanvas.amount.text = $"Balance: {balanceAlgos:F} Algos";
                     switch (txnStatus)
@@ -85,7 +90,7 @@ namespace Algorand.Unity.Samples.WalletConnect
                             walletConnectCanvas.transactionStatus.text = $"Transaction Status: {txnStatus}";
                             break;
                     }
-
+                    
                     break;
             }
 
@@ -109,6 +114,8 @@ namespace Algorand.Unity.Samples.WalletConnect
 
             await account.WaitForWalletApproval();
             Debug.Log($"Connected account:\n{AlgoApiSerializer.SerializeJson(account.Address)}");
+            //ADDED
+            buttons.SetActive(true);
         }
 
         private async UniTaskVoid PollForBalance()

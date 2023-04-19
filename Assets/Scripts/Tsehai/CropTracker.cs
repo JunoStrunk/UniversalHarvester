@@ -130,7 +130,7 @@ public class CropTracker : MonoBehaviour
                         isHarvestedKin = true;
                         signBoardandMessage.SetActive(true);
                         Plant();
-                        Message.text = "You got " + numToPrintint +" " + plantType + "s. You have " + totint +" " + plantType + "s.";
+                        Message.text = "+" + numToPrintint +" " + plantType + "s.";
                         StartCoroutine(Waiting());
 
                     }

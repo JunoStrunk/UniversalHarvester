@@ -8,6 +8,7 @@ public class new_level_system : MonoBehaviour
     public Image xp_bar;
     public float current_xp = 0;
     public float required_xp = 100;
+    public float excess_xp = 0;
     public int level = 0;
     public Text level_name;
 
@@ -27,8 +28,9 @@ public class new_level_system : MonoBehaviour
         {
             level++;
             required_xp = required_xp + (50 * (level));
+            excess_xp = current_xp - required_xp;
             xp_bar.fillAmount = 0;
-            current_xp = 0;
+            current_xp = excess_xp;
             level_name.text = "Level: " + (level + 1);
         }
         if (CropTracker.instance.isHarvestedKin==true)

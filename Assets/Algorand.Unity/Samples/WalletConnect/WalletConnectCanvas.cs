@@ -10,6 +10,7 @@ namespace Algorand.Unity.Samples.WalletConnect
         public Text connectionStatus;
         public Text transactionStatus;
         public Text connectedAccount;
+
         public Text amount;
 
         [FormerlySerializedAs("connectingTOWallet")]

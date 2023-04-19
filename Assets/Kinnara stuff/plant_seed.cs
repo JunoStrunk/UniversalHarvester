@@ -10,24 +10,47 @@ public class plant_seed : MonoBehaviour
     public string toGrow;
     public GameObject lookUp;
     public GameObject managerS;
+    public bool taken;
+    public bool inPlot;
 
     public bool planted_kin = false;
-    private void Update()
+     void Update()
     {
         if (CropTracker.instance.inRange == true)
         {
             managerS = CropTracker.instance.managerSpecific;
+            taken = managerS.GetComponent<PlantDelay>().hasCrop;
+            plotLoc = CropTracker.instance.plotLocation;
+         
         }
+
+        if (inPlot == true && taken ==false)
+        {
+            Inventory_UI.SetActive(true);
+        } else if (inPlot == false || taken ==true)
+        {
+            Inventory_UI.SetActive(false);
+        }
+        
     }
   
     void OnTriggerEnter(Collider collider)
     {  
-        if (collider.tag == "B1" || collider.tag == "B2" || collider.tag == "B3" || collider.tag == "B4" || collider.tag == "A1" || collider.tag == "A2" || collider.tag == "A3" || collider.tag == "A4")
+        if (collider.gameObject.tag == "B1" || collider.tag == "B2" || collider.tag == "B3" || collider.tag == "B4" || collider.tag == "A1" || collider.tag == "A2" || collider.tag == "A3" || collider.tag == "A4")
         {
-            if (planted_kin == false && managerS.GetComponent<PlantDelay>().hasCrop==false)
+            inPlot = true;
+           /* Debug.Log("Entered " + plotLoc);
+            if (taken == false)
             {
+                Debug.Log("There are no crops in " + plotLoc);
                 Inventory_UI.SetActive(true);
-            }
+
+            } else if (taken == true)
+            {
+                Debug.Log("There is a crop in " + plotLoc);
+                Inventory_UI.SetActive(false);
+            } */
+
         }
     }
 
@@ -49,6 +72,7 @@ public class plant_seed : MonoBehaviour
             Debug.Log("Planted carrots in plot " + plotLoc);
             CropTracker.instance.managerSpecific.GetComponent<PlantDelay>().planted = true;
             planted_kin = true;
+
 
             Inventory_UI.SetActive(false);
         }
@@ -168,7 +192,9 @@ public class plant_seed : MonoBehaviour
     {
         if (col.tag == "B1" || col.tag == "B2" || col.tag == "B3" || col.tag == "B4" || col.tag == "A1" || col.tag == "A2" || col.tag == "A3" || col.tag == "A4")
         {
-            Inventory_UI.SetActive(false);
+            inPlot = false;
+              /*  Inventory_UI.SetActive(false);
+            Debug.Log("exited " + plotLoc); */
         }
     }
 }

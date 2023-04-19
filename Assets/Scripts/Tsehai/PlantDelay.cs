@@ -90,25 +90,8 @@ public class PlantDelay : MonoBehaviour
                 
 
             }
-            if (CropTracker.instance.isHarvested == true)
-            {
-                //moved to CropTracker
-               // Reset();
-            }
+         
+            
         }
-    }
-
-     void Reset()
-    {
-           
-
-         Debug.Log("Reset");
-      /*   timer = 0;
-         stage1.SetActive(false);
-         stage2.SetActive(false);
-         stage3.SetActive(false);
-         done = false;
-        planted = false; */
-       
     }
 }

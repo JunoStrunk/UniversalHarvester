@@ -9,6 +9,7 @@ namespace Algorand.Unity.Samples.WalletConnect
     {
         public GameObject buttons;
         public static string addresss;
+        public GameObject demo_canvas;
 
 
         [FormerlySerializedAs("DappMeta")] public ClientMeta dappMeta;
@@ -115,6 +116,7 @@ namespace Algorand.Unity.Samples.WalletConnect
             await account.WaitForWalletApproval();
             Debug.Log($"Connected account:\n{AlgoApiSerializer.SerializeJson(account.Address)}");
             //ADDED
+            demo_canvas.SetActive(false);
             buttons.SetActive(true);
         }
 

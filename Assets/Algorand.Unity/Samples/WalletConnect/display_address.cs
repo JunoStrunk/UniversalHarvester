@@ -18,7 +18,7 @@ namespace Algorand.Unity.Samples.WalletConnect
         // Update is called once per frame
         void Update()
         {
-            //wallet_address.text = "Account: " + WalletConnectManager.addresss;
+            wallet_address.text = "Account: " + WalletConnectManager.addresss;
         }
     }
 }

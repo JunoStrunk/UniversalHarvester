@@ -20,7 +20,7 @@ public class AnimalNoises : MonoBehaviour
         if (isPlaying == false)
         {
             
-            int n = Random.Range(3, 7);
+            int n = Random.Range(5, 14);
 
             int num = Random.Range(0, noises.Length);
             source.clip = noises[num];

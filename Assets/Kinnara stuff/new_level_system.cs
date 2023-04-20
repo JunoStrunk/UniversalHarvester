@@ -27,10 +27,10 @@ public class new_level_system : MonoBehaviour
         if (current_xp >= required_xp)
         {
             level++;
-            required_xp = required_xp + (50 * (level));
             excess_xp = current_xp - required_xp;
-            xp_bar.fillAmount = 0;
             current_xp = excess_xp;
+            required_xp = required_xp + (50 * (level));
+            xp_bar.fillAmount = excess_xp/required_xp;
             level_name.text = "Level: " + (level + 1);
         }
         if (CropTracker.instance.isHarvestedKin==true)

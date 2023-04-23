@@ -11,7 +11,6 @@ namespace Algorand.Unity.Samples.WalletConnect
         public static string addresss;
         public GameObject demo_canvas;
 
-
         [FormerlySerializedAs("DappMeta")] public ClientMeta dappMeta;
 
         [FormerlySerializedAs("BridgeUrl")] public string bridgeUrl;
@@ -91,7 +90,12 @@ namespace Algorand.Unity.Samples.WalletConnect
                             walletConnectCanvas.transactionStatus.text = $"Transaction Status: {txnStatus}";
                             break;
                     }
-                    
+                    //ADDED
+                    Debug.Log("Things should disappear here");
+                    demo_canvas.SetActive(false);
+                    buttons.SetActive(true);
+
+
                     break;
             }
 
@@ -115,9 +119,7 @@ namespace Algorand.Unity.Samples.WalletConnect
 
             await account.WaitForWalletApproval();
             Debug.Log($"Connected account:\n{AlgoApiSerializer.SerializeJson(account.Address)}");
-            //ADDED
-            demo_canvas.SetActive(false);
-            buttons.SetActive(true);
+
         }
 
         private async UniTaskVoid PollForBalance()

@@ -6,14 +6,14 @@ namespace Algorand.Unity.Samples.WalletConnect
 {
     public class menu_buttons : MonoBehaviour
     {
-        public GameObject transaction_button;
+        public GameObject connection;
         public string credits_level;
         public GameObject option_buttons;
 
         public void start_game()
         {
             option_buttons.SetActive(false);
-            transaction_button.SetActive(true);
+            connection.SetActive(true);
         }
 
         public void exit_game()

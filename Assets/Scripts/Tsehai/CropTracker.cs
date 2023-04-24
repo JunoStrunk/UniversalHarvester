@@ -89,6 +89,8 @@ public class CropTracker : MonoBehaviour
     public string pumpkinString;
     [HideInInspector]
     public string beetString;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
 
     private void Awake()
@@ -124,6 +126,7 @@ public class CropTracker : MonoBehaviour
 
                     if (croptoHarvest != null)
                     {
+                        audioSource.PlayOneShot(audioClip);
                         Debug.Log(plotLocation + plantType);
                         managerSpecific.GetComponent<PlantDelay>().stage3.SetActive(false);
                         isHarvested = true;

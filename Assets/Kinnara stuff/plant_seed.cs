@@ -12,6 +12,8 @@ public class plant_seed : MonoBehaviour
     public GameObject managerS;
     public bool taken;
     public bool inPlot;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
     public bool planted_kin = false;
      void Update()
@@ -27,6 +29,9 @@ public class plant_seed : MonoBehaviour
         if (inPlot == true && taken ==false)
         {
             Inventory_UI.SetActive(true);
+            //Was gonna have random sound play but my headache is coming back so :melting emoji:
+            //int num = Random.Range(0, audioClip.Length);
+
         } else if (inPlot == false || taken ==true)
         {
             Inventory_UI.SetActive(false);
@@ -56,6 +61,8 @@ public class plant_seed : MonoBehaviour
 
     public void PlantCarrot()
     {
+       // audioSource.clip = audioClip[toPlay];
+        audioSource.PlayOneShot(audioClip);
         plotLoc = CropTracker.instance.plotLocation;
         toGrow = plotLoc + "carrot";
         lookUp = GameObject.Find(toGrow);
@@ -80,6 +87,7 @@ public class plant_seed : MonoBehaviour
 
     public void PlantPotatoes()
     {
+        audioSource.PlayOneShot(audioClip);
         plotLoc = CropTracker.instance.plotLocation;
         toGrow = plotLoc + "potato";
         lookUp = GameObject.Find(toGrow);
@@ -103,6 +111,7 @@ public class plant_seed : MonoBehaviour
 
     public void PlantEggplant()
     {
+        audioSource.PlayOneShot(audioClip);
         plotLoc = CropTracker.instance.plotLocation;
         toGrow = plotLoc + "eggplant";
         lookUp = GameObject.Find(toGrow);
@@ -125,6 +134,7 @@ public class plant_seed : MonoBehaviour
 
     public void PlantPeppers()
     {
+        audioSource.PlayOneShot(audioClip);
         plotLoc = CropTracker.instance.plotLocation;
         toGrow = plotLoc + "pepper";
         lookUp = GameObject.Find(toGrow);
@@ -147,6 +157,7 @@ public class plant_seed : MonoBehaviour
 
     public void PlantPumpkin()
     {
+        audioSource.PlayOneShot(audioClip);
         plotLoc = CropTracker.instance.plotLocation;
         toGrow = plotLoc + "pumpkin";
         lookUp = GameObject.Find(toGrow);
@@ -168,6 +179,7 @@ public class plant_seed : MonoBehaviour
     }
     public void PlantBeets()
     {
+        audioSource.PlayOneShot(audioClip);
         plotLoc = CropTracker.instance.plotLocation;
         toGrow = plotLoc + "beet";
         lookUp = GameObject.Find(toGrow);

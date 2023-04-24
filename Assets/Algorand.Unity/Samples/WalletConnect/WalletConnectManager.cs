@@ -7,9 +7,10 @@ namespace Algorand.Unity.Samples.WalletConnect
 {
     public class WalletConnectManager : MonoBehaviour
     {
-        public GameObject buttons;
-        public static string addresss;
-        public GameObject demo_canvas;
+        public GameObject market_canvas;
+        public GameObject selling_options;
+        public static string address;
+        public GameObject address_text;
 
         [FormerlySerializedAs("DappMeta")] public ClientMeta dappMeta;
 
@@ -78,7 +79,8 @@ namespace Algorand.Unity.Samples.WalletConnect
                     break;
                 case SessionStatus.WalletConnected:
                     walletConnectCanvas.connectedAccount.text = $"Connected Account: {account.Address}";
-                    addresss = account.Address;
+                    //ADDED
+                    address = account.Address;
                     var balanceAlgos = currentBalance / (double)MicroAlgos.PerAlgo;
                     walletConnectCanvas.amount.text = $"Balance: {balanceAlgos:F} Algos";
                     switch (txnStatus)
@@ -90,12 +92,7 @@ namespace Algorand.Unity.Samples.WalletConnect
                             walletConnectCanvas.transactionStatus.text = $"Transaction Status: {txnStatus}";
                             break;
                     }
-                    //ADDED
-                    Debug.Log("Things should disappear here");
-                    demo_canvas.SetActive(false);
-                    buttons.SetActive(true);
-
-
+                    
                     break;
             }
 
@@ -119,7 +116,6 @@ namespace Algorand.Unity.Samples.WalletConnect
 
             await account.WaitForWalletApproval();
             Debug.Log($"Connected account:\n{AlgoApiSerializer.SerializeJson(account.Address)}");
-
         }
 
         private async UniTaskVoid PollForBalance()
@@ -192,6 +188,10 @@ namespace Algorand.Unity.Samples.WalletConnect
             }
 
             txnStatus = TransactionStatus.Confirmed;
+            //ADDED
+            market_canvas.SetActive(false);
+            selling_options.SetActive(true);
+            address_text.SetActive(true);
         }
 
         private enum TransactionStatus

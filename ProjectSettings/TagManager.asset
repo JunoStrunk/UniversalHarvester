@@ -13,6 +13,7 @@ TagManager:
   - A2
   - A3
   - A4
+  - market
   layers:
   - Default
   - TransparentFX

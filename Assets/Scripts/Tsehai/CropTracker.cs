@@ -222,6 +222,7 @@ public class CropTracker : MonoBehaviour
         {
             potatotot += 16;
             numToPrint = 16;
+            xp = 20;
             totint = potatotot.ToString("0");
         } else if (plantType == "pepper")
         {

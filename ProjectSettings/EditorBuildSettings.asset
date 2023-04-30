@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Algorand.Unity/Samples/WalletConnect/StartScreen.unity
+    guid: ad8fed59790e92247a7ef6a646219007
+  - enabled: 1
     path: Assets/Scenes/Farm.unity
     guid: 051b79f5e51bcf04c955fbd4b920ca9d
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 34d8a1357b34c634fa5e1ddf308728f6
   m_configObjects: {}

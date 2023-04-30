@@ -8,6 +8,7 @@ namespace Algorand.Unity.Samples.WalletConnect
     {
         public string wallet;
         public string credits;
+        public string StartScreen;
         public GameObject wallet_canvas;
         public GameObject market_button;
 
@@ -30,6 +31,11 @@ namespace Algorand.Unity.Samples.WalletConnect
         public void enter_market()
         {
             wallet_canvas.SetActive(true);
+        }
+
+        public void main_menu()
+        {
+            Application.LoadLevel(StartScreen);
         }
     }
 }

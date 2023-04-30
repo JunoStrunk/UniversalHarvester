@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Algorand.Unity/Samples/WalletConnect/WalletConnectDemo.unity
     guid: 790e909c50d8f4d288a1f6d9b354c1b7
-  - enabled: 1
-    path: Assets/Algorand.Unity/Samples/WalletConnect/wallet_testing.unity
-    guid: 601b45a3b1017ba4495ff9f76451dd9c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class new_level_system : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class new_level_system : MonoBehaviour
 	public float required_xp = 100;
 	public float excess_xp = 0;
 	public int level = 0;
-	public Text level_name;
+	public TextMeshProUGUI level_name;
 
 	public FarmFactSign sign;
 
